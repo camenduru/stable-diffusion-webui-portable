@@ -15,3 +15,4 @@ This Project Aims for 100% Offline Stable Diffusion (People without internet or 
   - Change to `model, preprocess = clip.load(name=clip_model_name, download_root=os.path.join(script_path, 'cache/clip'))`
 - Test
 
+micromamba.exe from https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html
