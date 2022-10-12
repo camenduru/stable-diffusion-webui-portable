@@ -16,3 +16,5 @@ This Project Aims for 100% Offline Stable Diffusion (People without internet or 
 - Test
 
 micromamba.exe from https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html
+
+Example project: https://camenduru.itch.io/stable-diffusion-webui
