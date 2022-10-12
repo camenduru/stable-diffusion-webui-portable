@@ -17,7 +17,7 @@ This Project Aims for 100% Offline Stable Diffusion (People without internet or 
 
 micromamba.exe from https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html
 
-Example project: https://camenduru.itch.io/stable-diffusion-webui
+Example Project: https://camenduru.itch.io/stable-diffusion-webui
 
-## Example project Preparation (Youtube Video)
+## Example Project Preparation (Youtube Video)
 [![How to Use Stable Diffusion Webui Colab](https://i.imgur.com/Zi3LsXj.jpg)](https://www.youtube.com/watch?v=PHZ0VC_Losk)
