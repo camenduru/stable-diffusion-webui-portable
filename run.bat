@@ -5,5 +5,5 @@
 @CALL set HF_HOME=cache\huggingface
 @CALL set PYTHONDONTWRITEBYTECODE=1
 @CALL cd stable-diffusion-webui
-@CALL python -B webui.py --deepdanbooru --force-enable-xformers
+@CALL python -B webui.py --disable-safe-unpickle --no-half --force-enable-xformers --share
 @CALL PAUSE
