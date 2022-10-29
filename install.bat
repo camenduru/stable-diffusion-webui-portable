@@ -9,4 +9,5 @@
 @CALL git clone https://github.com/crowsonkb/k-diffusion.git repositories/k-diffusion
 @CALL git clone https://github.com/sczhou/CodeFormer.git repositories/CodeFormer
 @CALL git clone https://github.com/salesforce/BLIP.git repositories/BLIP
+@CALL python -m wget https://huggingface.co/nitrosocke/mo-di-diffusion/resolve/main/moDi-v1-pruned.ckpt -o models/Stable-diffusion/moDi-v1-pruned.ckpt
 @CALL PAUSE
