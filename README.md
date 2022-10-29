@@ -2,18 +2,20 @@
 This Project Aims for 100% Offline Stable Diffusion (People without internet or with slow internet can get it via USB or HD-DVD)
 
 # Preparation Guide
-- Clone this repo
-- Clone https://github.com/AUTOMATIC1111/stable-diffusion-webui inside this repo folder
-- Copy and paste files from C:\Users\<YOUR USERNAME>\\.cache folder to stable-diffusion-webui\cache
-- Clone dependencies to stable-diffusion-webui\repositories
-- Download all models and put into stable-diffusion-webui\models
-- Delete pkgs folder
+- Download repo zip file extract
+- Run install.bat
+- Download all models and put into stable-diffusion-webui\models\Stable-diffusion folder
+- Test with run.bat
+- Delete install.bat and pkgs folder
+- Zip 
+- Share 🎉
+
+# Optional
 - Edit interrogate.py (If you want to use Interrogate CLIP feature)
   - Open stable-diffusion-webui\modules\interrogate.py 
   - Add `from modules.paths import script_path` line after `from modules import devices, paths, lowvram` line
   - Find `model, preprocess = clip.load(clip_model_name)` 
   - Change to `model, preprocess = clip.load(name=clip_model_name, download_root=os.path.join(script_path, 'cache/clip'))`
-- Test
 
 micromamba.exe from https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html
 
