@@ -23,3 +23,6 @@ Example Project: https://camenduru.itch.io/stable-diffusion-webui
 
 ## Example Project Preparation (Youtube Video)
 [![How to Use Stable Diffusion Webui Colab](https://i.imgur.com/Zi3LsXj.jpg)](https://www.youtube.com/watch?v=PHZ0VC_Losk)
+
+## Tesla T4 WinServer 2022 Driver
+https://us.download.nvidia.com/tesla/473.81/473.81-data-center-tesla-desktop-winserver-2022-dch-international.exe
