@@ -1,9 +1,12 @@
 🐣 Please follow me for new updates https://twitter.com/camenduru
 
-# Stable Diffusion WebUI Offline (Portable)
+## 🚦 Please Use 🚦
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases/tag/v1.0.0-pre
+
+## Stable Diffusion WebUI Offline (Portable)
 This Project Aims for 100% Offline Stable Diffusion (People without internet or with slow internet can get it via USB or HD-DVD)
 
-# Preparation Guide
+## Preparation Guide
 - Download repo zip file extract
 - Run install.bat
 - Download all models and put into stable-diffusion-webui\models\Stable-diffusion folder
@@ -12,7 +15,7 @@ This Project Aims for 100% Offline Stable Diffusion (People without internet or 
 - Zip 
 - Share 🎉
 
-# Optional
+## Optional
 - Edit interrogate.py (If you want to use Interrogate CLIP feature)
   - Open stable-diffusion-webui\modules\interrogate.py 
   - Add `from modules.paths import script_path` line after `from modules import devices, paths, lowvram` line
