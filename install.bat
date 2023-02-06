@@ -2,7 +2,7 @@
 @CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
 @CALL condabin\micromamba.bat activate sd
 @CALL pip install -r requirements.txt
-@CALL git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
+@CALL git clone -b v1.6 https://github.com/camenduru/stable-diffusion-webui
 @CALL cd stable-diffusion-webui
 @CALL git clone https://github.com/CompVis/stable-diffusion.git repositories/stable-diffusion
 @CALL git clone https://github.com/CompVis/taming-transformers.git repositories/taming-transformers
