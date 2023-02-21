@@ -1,4 +1,5 @@
-🐣 Please follow me for new updates https://twitter.com/camenduru
+🐣 Please follow me for new updates https://twitter.com/camenduru <br />
+🔥 Please join our discord server https://discord.gg/k5BwmmvJJU
 
 ## 🚦 Please Use 🚦
 https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases/tag/v1.0.0-pre
