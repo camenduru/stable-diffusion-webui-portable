@@ -1,15 +1,17 @@
 🐣 Please follow me for new updates https://twitter.com/camenduru <br />
 🔥 Please join our discord server https://discord.gg/k5BwmmvJJU
 
+## Main Repo
+https://github.com/camenduru/stable-diffusion-webui/tree/v2.2
+
 ## Stable Diffusion WebUI Offline (Portable)
 This Project Aims for 100% Offline Stable Diffusion (People without internet or with slow internet can get it via USB or HD-DVD)
 
 ## Preparation Guide
 - Download repo zip file extract
-- Run install.bat
+- Run run.bat
 - Download all models and put into stable-diffusion-webui\models\Stable-diffusion folder
-- Test with run.bat
-- Delete install.bat and pkgs folder
+- Delete pkgs folder
 - Zip 
 - Share 🎉
 
