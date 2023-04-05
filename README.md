@@ -4,7 +4,7 @@
 ## Main Repo
 https://github.com/camenduru/stable-diffusion-webui/tree/v2.2
 
-## Stable Diffusion WebUI Offline (Portable)
+## Stable Diffusion WebUI Portable
 This Project Aims for 100% Offline Stable Diffusion (People without internet or with slow internet can get it via USB or HD-DVD)
 
 ## Preparation Guide
