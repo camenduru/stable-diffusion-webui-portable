@@ -6,7 +6,7 @@
 @CALL set HF_HOME=cache\huggingface
 @CALL set PYTHONDONTWRITEBYTECODE=1
 @CALL pip install xformers==0.0.16
-@CALL git\bin\git.exe clone -b v2.2 https://github.com/camenduru/stable-diffusion-webui
+@CALL git clone -b v2.2 https://github.com/camenduru/stable-diffusion-webui
 @CALL cd stable-diffusion-webui
 @CALL python -B launch.py --xformers
 @CALL PAUSE
