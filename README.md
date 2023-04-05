@@ -9,9 +9,10 @@ This Project Aims for 100% Offline Stable Diffusion (People without internet or 
 
 ## Preparation Guide
 - Download repo zip file extract
-- Run run.bat
+- Run install.bat
 - Download all models and put into stable-diffusion-webui\models\Stable-diffusion folder
-- Delete pkgs folder
+- Test with run.bat
+- Delete install.bat and pkgs folder
 - Zip 
 - Share 🎉
 
