@@ -27,7 +27,7 @@
     -   找到 `model, preprocess = clip.load(clip_model_name)`
     -   更改为 `model, preprocess = clip.load(name=clip_model_name, download_root=os.path.join(script_path, 'cache/clip'))`
 
-来自 [https://mamba.readthedocs.io/en/latest/user\_guide/micromamba.html](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) 的微型曼巴.exe
+micromamba.exe： [https://mamba.readthedocs.io/en/latest/user\_guide/micromamba.html](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)
 
 示例项目：[https://camenduru.itch.io/stable-diffusion-webui](https://camenduru.itch.io/stable-diffusion-webui)
 
