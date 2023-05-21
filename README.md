@@ -1,5 +1,5 @@
 🐣请关注我以获取新的更新 [https://twitter.com/camenduru](https://twitter.com/camenduru)  
-🔥请加入我们的不和谐服务器 [https://discord.gg/k5BwmmvJJU](https://discord.gg/k5BwmmvJJU)
+🔥请加入我们的Discord服务器 [https://discord.gg/k5BwmmvJJU](https://discord.gg/k5BwmmvJJU)
 
 ## [](https://github.com/camenduru/stable-diffusion-webui-portable#main-repo)主仓库
 
