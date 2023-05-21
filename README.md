@@ -13,7 +13,7 @@
 
 -   下载存储库压缩文件提取
 -   运行安装.bat
--   下载所有模型并放入稳定扩散网络\\模型\\稳定扩散文件夹
+-   下载所有模型并放入stable-diffusion-weibui\\models\\Stable-diffusion文件夹
 -   通过run.bat进行测试
 -   删除安装.bat和 pkgs 文件夹
 -   压缩
