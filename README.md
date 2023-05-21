@@ -7,7 +7,7 @@
 
 ## [](https://github.com/camenduru/stable-diffusion-webui-portable#stable-diffusion-webui-portable)Stable Diffusion WebUI便携式
 
-该项目旨在实现100%离线稳定扩散（没有互联网或互联网速度慢的人可以通过USB或HD-DVD获得）
+该项目旨在实现100%离线的Stable-Diffusion（没有互联网或互联网速度慢的人可以通过USB或HD-DVD获得）
 
 ## [](https://github.com/camenduru/stable-diffusion-webui-portable#preparation-guide)准备指南
 
