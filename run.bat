@@ -4,6 +4,7 @@
 @CALL set TORCH_HOME=cache\torch
 @CALL set HF_HOME=cache\huggingface
 @CALL set PYTHONDONTWRITEBYTECODE=1
+@CALL set COMMANDLINE_ARGS= --theme dark --xformers --api --autolaunch
 @CALL cd stable-diffusion-webui
-@CALL python -B webui.py --xformers
+@CALL python -B webui.py %COMMANDLINE_ARGS%
 @CALL PAUSE
