@@ -10,8 +10,7 @@
 @CALL set PYTHON_VERSION=3.10.11
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
-@CALL set XFROMERS_VERSION=0.0.16rc425
-@CALL set TORCH_VERSION=2.0.1
+@CALL set XFROMERS_VERSION=0.0.16
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
 @CALL set VENV_DIR=%ROOT%envs/%VENV_NAME%
@@ -22,6 +21,9 @@
 @CALL set COMMANDLINE_ARGS=--theme dark --xformers --autolaunch --api
 @CALL echo SETTING VARIABLES... DONE
 
+@CALL set PYTHONHOME=%VENV_DIR%
+@CALL set PYTHONPATH=%ROOT%envs/%VENV_NAME%/lib/site-packages
+
 @REM SETTING UP ENVIRONMENT...
 @CALL "%~dp0micromamba.exe" create -n %VENV_NAME% python=%PYTHON_VERSION% git=%GIT_VERSION% git-lfs=%GITLFS_VERSION% -c conda-forge -r "%~dp0\" -y
 @REM INIT ENVIRONMENT...
@@ -30,15 +32,14 @@
 @REM ACTIVATE ENVIRONMENT...
 @CALL condabin\micromamba.bat activate %VENV_NAME%
 @CALL ACTIVATE ENVIRONMENT... DONE
+
 @REM PIP UPGRADE...
 python -m pip install --upgrade pip
 @CALL echo PIP UPGRADE... DONE
+
 @REM PIP INSTALLING DEPENDENCIES...
 @CALL echo install python dependencies...
-@CALL pip uninstall -y torch torchvision torchaudio
-@CALL pip3 install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-@CALL pip uninstall -y xformers
-@CALL pip install -U xformers==%XFROMERS_VERSION%
+@CALL pip install xformers==%XFROMERS_VERSION% --no-cache-dir
 @CALL echo PIP INSTALLING DEPENDENCIES... DONE
 
 @REM CLONE STABLE-DIFFUSION-WEBUI...
@@ -48,11 +49,11 @@ python -m pip install --upgrade pip
 
 @REM CLONE REPOSITORIES...
 @CALL echo Clone REPOSITORIES...
-@CALL git clone https://github.com/CompVis/stable-diffusion.git %WEBUI_LOACTION%\respositories\stable-diffusion
-@CALL git clone https://github.com/CompVis/taming-transformers.git %WEBUI_LOACTION%\respositories\taming-transformers
-@CALL git clone https://github.com/crowsonkd/k-diffusion.git %WEBUI_LOACTION%\respositories\k-diffusion
-@CALL git clone https://github.com/sczhou/CodeFormer.git %WEBUI_LOACTION%\respositories\CodeFormer
-@CALL git clone https://github.com/saleforce/BLIP.git %WEBUI_LOACTION%\respositories\BLIP
+@CALL git clone https://github.com/CompVis/stable-diffusion.git %WEBUI_LOACTION%\respositories\stable-diffusion --SSL_NO_VERIFY
+@CALL git clone https://github.com/CompVis/taming-transformers.git %WEBUI_LOACTION%\respositories\taming-transformers --SSL_NO_VERIFY
+@CALL git clone https://github.com/crowsonkd/k-diffusion.git %WEBUI_LOACTION%\respositories\k-diffusion --SSL_NO_VERIFY
+@CALL git clone https://github.com/sczhou/CodeFormer.git %WEBUI_LOACTION%\respositories\CodeFormer --SSL_NO_VERIFY
+@CALL git clone https://github.com/saleforce/BLIP.git %WEBUI_LOACTION%\respositories\BLIP --SSL_NO_VERIFY
 @CALL echo CLONE REPOSITORIES... DONE
 
 @REM CLONE BASE PLUGINS...
@@ -103,8 +104,6 @@ python -m pip install --upgrade pip
 @CALL echo         HF_HOME:                 %HF_HOME%
 @CALL echo         PYTHONDONTWRITEBYTECODE: %PYTHONDONTWRITEBYTECODE%
 @CALL echo         COMMANDLINE_ARGS:        %COMMANDLINE_ARGS%
-@CALL echo         ---------------------------------------------------
-@CALL pip list
 @CALL echo         ---------------------------------------------------
 
 @REM LAUNCH WEBUI ...
