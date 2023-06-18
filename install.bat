@@ -11,9 +11,6 @@
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
 @CALL set XFROMERS_VERSION=0.0.16rc425
-@CALL set TORCH_VERSION=2.0.0
-@CALL set TORCHVISION_VERSION=2.0.2
-@CALL set TORCHAUDIO_VERSION=0.15.2
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
 @CALL set VENV_DIR=%ROOT%envs/%VENV_NAME%
@@ -35,10 +32,10 @@
 
 @REM PIP INSTALLING DEPENDENCIES...
 @CALL echo install python dependencies...
-@CALL pip uninstall -y torch
-@CALL pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+@CALL pip uninstall -y torch torchvision torchaudio
+@CALL pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 --no-cache-dir
 @CALL pip uninstall -y xformers
-@CALL pip install -U xformers==%XFROMERS_VERSION%
+@CALL pip install -U xformers==%XFROMERS_VERSION% --no-cache-dir
 @CALL echo install python dependencies... Done
 @CALL pip list
 @CALL echo PIP INSTALLING DEPENDENCIES... DONE
