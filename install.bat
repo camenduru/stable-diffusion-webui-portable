@@ -59,8 +59,7 @@
 @REM PIP INSTALLING DEPENDENCIES...
 @CALL echo install python dependencies...
 @CALL pip uninstall -y xformers
-@CALL pip install torch==%TORCH_VERSION%
-@CALL pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+@CALL pip install torch==%TORCH_VERSION% torchaudio==2.0.1+cu118 torchaudio=0.15.1 --index-url https://download.pytorch.org/whl/cu118
 @CALL pip install -U xformers==%XFROMERS_VERSION%
 @CALL echo install python dependencies... Done
 @CALL pip list
@@ -73,11 +72,11 @@
 
 @REM CLONE REPOSITORIES...
 @CALL echo Clone REPOSITORIES...
-@CALL git clone https://github.com/CompVis/stable-diffusion.git %WEBUI_LOACTION%\respositories/stable-diffusion
-@CALL git clone https://github.com/CompVis/taming-transformers.git %WEBUI_LOACTION%\respositories/taming-transformers
-@CALL git clone https://github.com/crowsonkd/k-diffusion.git %WEBUI_LOACTION%\respositories/k-diffusion
-@CALL git clone https://github.com/sczhou/CodeFormer.git %WEBUI_LOACTION%\respositories/CodeFormer
-@CALL git clone https://github.com/saleforce/BLIP.git %WEBUI_LOACTION%\respositories/BLIP
+@CALL git clone https://github.com/CompVis/stable-diffusion.git %WEBUI_LOACTION%\respositories\stable-diffusion
+@CALL git clone https://github.com/CompVis/taming-transformers.git %WEBUI_LOACTION%\respositories\taming-transformers
+@CALL git clone https://github.com/crowsonkd/k-diffusion.git %WEBUI_LOACTION%\respositories\k-diffusion
+@CALL git clone https://github.com/sczhou/CodeFormer.git %WEBUI_LOACTION%\respositories\CodeFormer
+@CALL git clone https://github.com/saleforce/BLIP.git %WEBUI_LOACTION%\respositories\BLIP
 @CALL echo CLONE REPOSITORIES... DONE
 
 @REM CLONE BASE PLUGINS...
