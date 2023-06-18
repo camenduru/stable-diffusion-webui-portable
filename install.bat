@@ -10,8 +10,10 @@
 @CALL set PYTHON_VERSION=3.10.11
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
-@CALL set TORCH_VERSION=2.0.1
 @CALL set XFROMERS_VERSION=0.0.16rc425
+@CALL set TORCH_VERSION=2.0.0
+@CALL set TORCHVISION_VERSION=2.0.2
+@CALL set TORCHAUDIO_VERSION=0.15.2
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
 @CALL set VENV_DIR=%ROOT%envs/%VENV_NAME%
@@ -31,35 +33,10 @@
 @CALL condabin\micromamba.bat activate %VENV_NAME%
 @CALL ACTIVATE ENVIRONMENT... DONE
 
-@REM VARIABLES ...
-@CALL echo         ---------------------------------------------------
-@CALL echo         ROOT LOCATIONS:
-@CALL echo         CURRENT ROOT:            %ROOT%
-@CALL echo         WebUI Location:          %WEBUI_LOACTION%
-@CALL echo         ---------------------------------------------------
-@CALL echo         DEPOT SETTING :
-@CALL echo         Remote Address:          %SDDEPOT%
-@CALL echo         Current Branch:          %BRANCH%
-@CALL echo         ---------------------------------------------------
-@CALL echo         PYTHON & GIT VERSIONS:
-@CALL echo         PYTHON VERSION:          %PYTHON_VERSION%
-@CALL echo         GIT VERSION:             %GIT_VERSION%
-@CALL echo         GIT-LFS VERSION:         %GITLFS_VERSION%
-@CALL echo         ---------------------------------------------------
-@CALL echo         LAUNCH VARIABLES:
-@CALL echo         VENV_NAME:               %VENV_NAME%
-@CALL echo         VENV_DIR:                %VENV_DIR%
-@CALL echo         GDOWN_CACHE:             %GDOWN_CACHE%
-@CALL echo         TORCH_HOME:              %TORCH_HOME%
-@CALL echo         HF_HOME:                 %HF_HOME%
-@CALL echo         PYTHONDONTWRITEBYTECODE: %PYTHONDONTWRITEBYTECODE%
-@CALL echo         COMMANDLINE_ARGS:        %COMMANDLINE_ARGS%
-@CALL echo         ---------------------------------------------------
-
 @REM PIP INSTALLING DEPENDENCIES...
 @CALL echo install python dependencies...
 @CALL pip uninstall -y torch
-@CALL pip install torch==%TORCH_VERSION% torchaudio==2.0.1+cu118 torchaudio=0.15.1 --index-url https://download.pytorch.org/whl/cu118
+@CALL pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 @CALL pip uninstall -y xformers
 @CALL pip install -U xformers==%XFROMERS_VERSION%
 @CALL echo install python dependencies... Done
@@ -104,6 +81,33 @@
 @CALL echo Dowloading VAE Model: animevae.pt
 @CALL curl "https://cdn-lfs.huggingface.co/repos/bf/67/bf675108928dfc4635fd5b819bedfc5a96c30517a5dc961761489108d2c5c19a/f921fb3f29891d2a77a6571e56b8b5052420d2884129517a333c60b1b4816cdf?response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27animevae.pt%3B+filename%3D%22animevae.pt%22%3B&Expires=1687115659&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4tbGZzLmh1Z2dpbmdmYWNlLmNvL3JlcG9zL2JmLzY3L2JmNjc1MTA4OTI4ZGZjNDYzNWZkNWI4MTliZWRmYzVhOTZjMzA1MTdhNWRjOTYxNzYxNDg5MTA4ZDJjNWMxOWEvZjkyMWZiM2YyOTg5MWQyYTc3YTY1NzFlNTZiOGI1MDUyNDIwZDI4ODQxMjk1MTdhMzMzYzYwYjFiNDgxNmNkZj9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2ODcxMTU2NTl9fX1dfQ__&Signature=SAKIfTe6qJCJwSRUJMo-qVA4wyjmpuf0GMKLK4OoTDWTptF9b54wqplXNFh-zwjfbIZGvcvswLb99-A9sr9ULn91THbR0fRzcLuBskFhORCrFDttpoJbh6YUeRg8tMg3yd0kwKWl-Z2HSTUbevU-jJx-8CWfNlJq26mJR2yNNTfnOrQlqYOZm1L64j2TOmwUxvaY3VUxdHdTxC9U2Ll4JSlrTHcPeZb8dNa-OlZw12hTg7Au5I7oMq5TcH8Q2hky7JEVr0HVDjnkM44DOG1UPebNuP66Rq7Kps6GxWnKJxsS5ONfmVvPbUgryFG-8KTWSfWuz0sHliDsLXcS%7EUVI9A__&Key-Pair-Id=KVTP0A1DKRTAX" --output "%WEBUI_LOACTION%\models\VAE\animevae.pt"
 @CALL echo DOWNLOADING BASE MODELS... DONE
+
+@REM VARIABLES ...
+@CALL echo         ---------------------------------------------------
+@CALL echo         ROOT LOCATIONS:
+@CALL echo         CURRENT ROOT:            %ROOT%
+@CALL echo         WebUI Location:          %WEBUI_LOACTION%
+@CALL echo         ---------------------------------------------------
+@CALL echo         DEPOT SETTING :
+@CALL echo         Remote Address:          %SDDEPOT%
+@CALL echo         Current Branch:          %BRANCH%
+@CALL echo         ---------------------------------------------------
+@CALL echo         PYTHON & GIT VERSIONS:
+@CALL echo         PYTHON VERSION:          %PYTHON_VERSION%
+@CALL echo         GIT VERSION:             %GIT_VERSION%
+@CALL echo         GIT-LFS VERSION:         %GITLFS_VERSION%
+@CALL echo         ---------------------------------------------------
+@CALL echo         LAUNCH VARIABLES:
+@CALL echo         VENV_NAME:               %VENV_NAME%
+@CALL echo         VENV_DIR:                %VENV_DIR%
+@CALL echo         GDOWN_CACHE:             %GDOWN_CACHE%
+@CALL echo         TORCH_HOME:              %TORCH_HOME%
+@CALL echo         HF_HOME:                 %HF_HOME%
+@CALL echo         PYTHONDONTWRITEBYTECODE: %PYTHONDONTWRITEBYTECODE%
+@CALL echo         COMMANDLINE_ARGS:        %COMMANDLINE_ARGS%
+@CALL echo         ---------------------------------------------------
+@CALL pip list
+@CALL echo         ---------------------------------------------------
 
 @REM LAUNCH WEBUI ...
 @CALL echo LAUNCH WEBUI ...
