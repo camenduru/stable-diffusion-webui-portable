@@ -58,8 +58,9 @@
 
 @REM PIP INSTALLING DEPENDENCIES...
 @CALL echo install python dependencies...
-@CALL pip uninstall -y xformers
+@CALL pip uninstall -y torch
 @CALL pip install torch==%TORCH_VERSION% torchaudio==2.0.1+cu118 torchaudio=0.15.1 --index-url https://download.pytorch.org/whl/cu118
+@CALL pip uninstall -y xformers
 @CALL pip install -U xformers==%XFROMERS_VERSION%
 @CALL echo install python dependencies... Done
 @CALL pip list
