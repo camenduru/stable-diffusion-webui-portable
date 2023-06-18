@@ -35,6 +35,5 @@ micromamba.exe 来自 https://mamba.readthedocs.io/en/latest/user_guide/micromam
 
 示例项目: https://camenduru.itch.io/stable-diffusion-webui
 
-## Example Project Preparation (Youtube Video)
 ## 示例项目（Youtube 视频）
 [![How to Use Stable Diffusion Webui Colab](https://i.imgur.com/Zi3LsXj.jpg)](https://www.youtube.com/watch?v=PHZ0VC_Losk)
