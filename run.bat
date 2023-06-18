@@ -22,6 +22,13 @@
 @CALL set COMMANDLINE_ARGS=--theme dark --xformers --autolaunch --api
 @CALL echo SETTING VARIABLES... DONE
 
+@REM INIT ENVIRONMENT...
+@CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
+
+@REM ACTIVATE ENVIRONMENT...
+@CALL condabin\micromamba.bat activate %VENV_NAME%
+@CALL ACTIVATE ENVIRONMENT... DONE
+
 @REM VARIABLES ...
 @CALL echo         ---------------------------------------------------
 @CALL echo         ROOT LOCATIONS:

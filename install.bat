@@ -22,6 +22,15 @@
 @CALL set COMMANDLINE_ARGS=--theme dark --xformers --autolaunch --api
 @CALL echo SETTING VARIABLES... DONE
 
+@REM SETTING UP ENVIRONMENT...
+@CALL "%~dp0micromamba.exe" create -n %VENV_NAME% python=%PYTHON_VERSION% git=%GIT_VERSION% git-lfs=%GITLFS_VERSION% -c conda-forge -r "%~dp0\" -y
+@REM INIT ENVIRONMENT...
+@CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
+
+@REM ACTIVATE ENVIRONMENT...
+@CALL condabin\micromamba.bat activate %VENV_NAME%
+@CALL ACTIVATE ENVIRONMENT... DONE
+
 @REM VARIABLES ...
 @CALL echo         ---------------------------------------------------
 @CALL echo         ROOT LOCATIONS:
@@ -46,15 +55,6 @@
 @CALL echo         PYTHONDONTWRITEBYTECODE: %PYTHONDONTWRITEBYTECODE%
 @CALL echo         COMMANDLINE_ARGS:        %COMMANDLINE_ARGS%
 @CALL echo         ---------------------------------------------------
-
-@REM SETTING UP ENVIRONMENT...
-@CALL "%~dp0micromamba.exe" create -n %VENV_NAME% python=%PYTHON_VERSION% git=%GIT_VERSION% git-lfs=%GITLFS_VERSION% -c conda-forge -r "%~dp0\" -y
-@REM INIT ENVIRONMENT...
-@CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
-
-@REM ACTIVATE ENVIRONMENT...
-@CALL condabin\micromamba.bat activate %VENV_NAME%
-@CALL ACTIVATE ENVIRONMENT... DONE
 
 @REM PIP INSTALLING DEPENDENCIES...
 @CALL echo install python dependencies...
