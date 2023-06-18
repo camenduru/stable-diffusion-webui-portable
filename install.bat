@@ -11,6 +11,7 @@
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
 @CALL set XFROMERS_VERSION=0.0.16rc425
+@CALL set TORCH_VERSION=2.0.1
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
 @CALL set VENV_DIR=%ROOT%envs/%VENV_NAME%
@@ -29,15 +30,15 @@
 @REM ACTIVATE ENVIRONMENT...
 @CALL condabin\micromamba.bat activate %VENV_NAME%
 @CALL ACTIVATE ENVIRONMENT... DONE
-
+@REM PIP UPGRADE...
+python -m pip install --upgrade pip
+@CALL echo PIP UPGRADE... DONE
 @REM PIP INSTALLING DEPENDENCIES...
 @CALL echo install python dependencies...
 @CALL pip uninstall -y torch torchvision torchaudio
-@CALL pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 --no-cache-dir
+@CALL pip3 install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 @CALL pip uninstall -y xformers
-@CALL pip install -U xformers==%XFROMERS_VERSION% --no-cache-dir
-@CALL echo install python dependencies... Done
-@CALL pip list
+@CALL pip install -U xformers==%XFROMERS_VERSION%
 @CALL echo PIP INSTALLING DEPENDENCIES... DONE
 
 @REM CLONE STABLE-DIFFUSION-WEBUI...
