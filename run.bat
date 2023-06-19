@@ -10,6 +10,7 @@
 @CALL set PYTHON_VERSION=3.10.11
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
+@CALL set TORCH_VERSION=1.13.1
 @CALL set XFROMERS_VERSION=0.0.16
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
@@ -19,19 +20,11 @@
 @CALL set HF_HOME=cache\huggingface
 @CALL set PYTHONDONTWRITEBYTECODE=1
 @CALL set COMMANDLINE_ARGS=--theme dark --xformers --autolaunch --api
-@CALL echo SETTING VARIABLES... DONE
-
-@CALL set PYTHONHOME=%VENV_DIR%
-@CALL set PYTHONPATH=%ROOT%envs/%VENV_NAME%/lib/site-packages
 
 @REM SETTING UP ENVIRONMENT...
 @CALL "%~dp0micromamba.exe" create -n %VENV_NAME% python=%PYTHON_VERSION% git=%GIT_VERSION% git-lfs=%GITLFS_VERSION% -c conda-forge -r "%~dp0\" -y
-@REM INIT ENVIRONMENT...
 @CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
-
-@REM ACTIVATE ENVIRONMENT...
 @CALL condabin\micromamba.bat activate %VENV_NAME%
-@CALL ACTIVATE ENVIRONMENT... DONE
 
 @REM VARIABLES ...
 @CALL echo         ---------------------------------------------------
@@ -47,6 +40,8 @@
 @CALL echo         PYTHON VERSION:          %PYTHON_VERSION%
 @CALL echo         GIT VERSION:             %GIT_VERSION%
 @CALL echo         GIT-LFS VERSION:         %GITLFS_VERSION%
+@CALL echo         XFROMERS_VERSION:        %XFROMERS_VERSION%
+@CALL echo         TORCH_VERSION:           %TORCH_VERSION%
 @CALL echo         ---------------------------------------------------
 @CALL echo         LAUNCH VARIABLES:
 @CALL echo         VENV_NAME:               %VENV_NAME%
@@ -63,6 +58,5 @@
 @CALL cd "%WEBUI_LOACTION%"
 @CALL echo Launch WebUI with COMMANDLINE_ARGS: "%COMMANDLINE_ARGS%"
 @CALL python -B launch.py "%COMMANDLINE_ARGS%"
-@CALL echo LAUNCH WEBUI... DONE
 
 @CALL PAUSE
