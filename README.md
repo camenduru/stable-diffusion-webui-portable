@@ -1,31 +1,42 @@
-🐣 Please follow me for new updates https://twitter.com/camenduru <br />
-🔥 Please join our discord server https://discord.gg/k5BwmmvJJU
+## 原始版本
+https://github.com/camenduru/stable-diffusion-webui-portable
 
-## Main Repo
-https://github.com/camenduru/stable-diffusion-webui/tree/v2.2
+🐣 请关注我以获取最新消息 https://twitter.com/camenduru <br />
+🔥 请加入我们的 Discord 服务器 https://discord.gg/k5BwmmvJJU
 
-## Stable Diffusion WebUI Portable
-This Project Aims for 100% Offline Stable Diffusion (People without internet or with slow internet can get it via USB or HD-DVD)
+## 主要仓库
+https://github.com/Jeffreytsai1004/stable-diffusion-webui/tree/portable
 
-## Preparation Guide
-- Download repo zip file extract
-- Run install.bat
-- Download all models and put into stable-diffusion-webui\models\Stable-diffusion folder
-- Test with run.bat
-- Delete install.bat and pkgs folder
-- Zip 
-- Share 🎉
+## Stable Diffusion WebUI 便携版本
+本项目旨在实现 100% 离线的 Stable Diffusion（没有网络或网络速度较慢的人可以通过 USB 或 HD-DVD 获取）
 
-## Optional
-- Edit interrogate.py (If you want to use Interrogate CLIP feature)
-  - Open stable-diffusion-webui\modules\interrogate.py 
-  - Add `from modules.paths import script_path` line after `from modules import devices, paths, lowvram` line
-  - Find `model, preprocess = clip.load(clip_model_name)` 
-  - Change to `model, preprocess = clip.load(name=clip_model_name, download_root=os.path.join(script_path, 'cache/clip'))`
+## 更新内容
+- 升级Torch为`1.31.1`版本，现在可以使用`CUDA 11.7`
+- 修改xformer为`0.0.16`版本，以获得更好的兼容性
+- 对应的Python推荐使用3.10版本
+- 可自定修改插件版本和仓库位置变量
+- 添加了基础模型自动下载，在`install.bat`中Clone模块可自行添加下载内容
+- 对应的WebUI中`Launch.py`文件中需修改对应的仓库依赖
 
-micromamba.exe from https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html
+## 部署指南
+- 下载仓库 zip 文件解压
+- 运行`install.bat`
+- 已内置基础模型和基础插件,将自动下载
+- 使用 `run.bat` 进行测试
+- 删除 `install.bat` 和 `pkgs` 文件夹
+- 压缩zip文件
+- 分享🎉
 
-Example Project: https://camenduru.itch.io/stable-diffusion-webui
+## 可选项
+- 编辑 interrogate.py（如果你想使用 Interrogate CLIP 功能）
+    - 打开 stable-diffusion-webui\modules\interrogate.py
+    - 在`from modules import devices, paths, lowvram`行之后添加`from modules.paths import script_path`行
+    - 找到`model, preprocess = clip.load(clip_model_name)`
+    - 更改为`model, preprocess = clip.load(name=clip_model_name, download_root=os.path.join(script_path, 'cache/clip'))`
 
-## Example Project Preparation (Youtube Video)
+micromamba.exe 来自 https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html
+
+示例项目: https://camenduru.itch.io/stable-diffusion-webui
+
+## 示例项目（Youtube 视频）
 [![How to Use Stable Diffusion Webui Colab](https://i.imgur.com/Zi3LsXj.jpg)](https://www.youtube.com/watch?v=PHZ0VC_Losk)
