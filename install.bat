@@ -5,12 +5,13 @@
 @CALL set WEBUI_LOACTION=%ROOT%stable-diffusion-webui
 @REM DEPOT SETTING ...
 @CALL set SDDEPOT=https://github.com/Jeffreytsai1004/stable-diffusion-webui/
-@CALL set BRANCH=v2.2
+@CALL set BRANCH=cu118
 @REM PYTHON & GIT VERSIONS:
 @CALL set PYTHON_VERSION=3.10.11
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
-@CALL set TORCH_VERSION=1.13.1
+@CALL set TORCH_VERSION=2.0.1+cu118
+@CALL set TORCHVISION_VERSION=0.15.2+cu118
 @CALL set XFROMERS_VERSION=0.0.16
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
@@ -24,10 +25,12 @@
 @REM SETTING UP ENVIRONMENT...
 @CALL "%~dp0micromamba.exe" create -n %VENV_NAME% python=%PYTHON_VERSION% git=%GIT_VERSION% git-lfs=%GITLFS_VERSION% -c conda-forge -r "%~dp0\" -y
 @CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
+@REM PIP INSTALL DEPENDENCIES...
 @CALL condabin\micromamba.bat activate %VENV_NAME%
 @CALL python -m pip install --upgrade pip
 @CALL pip install xformers==%XFROMERS_VERSION%
-@CALL pips install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+@CALL pip install torch==%TORCH_VERSION% torchvision==%TORCHVISION_VERSION% --index-url https://download.pytorch.org/whl/cu118
+
 @REM CLONE STABLE-DIFFUSION-WEBUI...
 @CALL git clone -b %BRANCH% %SDDEPOT% %WEBUI_LOACTION%
 
@@ -71,6 +74,7 @@
 @CALL echo         GIT-LFS VERSION:         %GITLFS_VERSION%
 @CALL echo         XFROMERS_VERSION:        %XFROMERS_VERSION%
 @CALL echo         TORCH_VERSION:           %TORCH_VERSION%
+@CALL echo         TORCHVISION_VERSION:     %TORCHVISION_VERSION%
 @CALL echo         ---------------------------------------------------
 @CALL echo         LAUNCH VARIABLES:
 @CALL echo         VENV_NAME:               %VENV_NAME%
