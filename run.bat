@@ -3,8 +3,8 @@
 @CALL set ROOT=%~dp0
 @CALL set WEBUI_LOACTION=%ROOT%stable-diffusion-webui
 @REM DEPOT SETTING ...
-@CALL set SDDEPOT=https://github.com/AUTOMATIC1111/stable-diffusion-webui/
-@CALL set BRANCH=master
+@CALL set SDDEPOT=https://github.com/Jeffreytsai1004/stable-diffusion-webui/
+@CALL set BRANCH=cu117
 @REM PYTHON & GIT VERSIONS:
 @CALL set PYTHON_VERSION=3.10.11
 @CALL set GIT_VERSION=2.41.0
