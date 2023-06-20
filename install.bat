@@ -1,5 +1,6 @@
 @CALL echo off
-@REM SETTING VARIABLES...
+@REM CHECKING NVIDIA DRIVER VERSION...
+@CALL nvidia-smi
 @REM ROOT LOCATIONS: 
 @CALL set ROOT=%~dp0
 @CALL set WEBUI_LOACTION=%ROOT%stable-diffusion-webui
