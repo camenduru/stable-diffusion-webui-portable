@@ -7,7 +7,7 @@
 @CALL set SDDEPOT=https://github.com/Jeffreytsai1004/stable-diffusion-webui/
 @CALL set BRANCH=cu117
 @REM PYTHON & GIT VERSIONS:
-@CALL set PYTHON_VERSION=3.10.11
+@CALL set PYTHON_VERSION=3.10.9
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
 @CALL set TORCH_VERSION=1.13.1+cu117
