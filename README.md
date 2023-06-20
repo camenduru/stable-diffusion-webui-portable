@@ -5,24 +5,24 @@ https://github.com/camenduru/stable-diffusion-webui-portable
 🔥 请加入我们的 Discord 服务器 https://discord.gg/k5BwmmvJJU
 
 ## 主要仓库
-https://github.com/Jeffreytsai1004/stable-diffusion-webui/tree/portable
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/
 
 ## Stable Diffusion WebUI 便携版本
 本项目旨在实现 100% 离线的 Stable Diffusion（没有网络或网络速度较慢的人可以通过 USB 或 HD-DVD 获取）
 
 ## 更新内容
 - VERSION SETTING:
--     SDDEPOT                  https://github.com/Jeffreytsai1004/stable-diffusion-webui/
--     BRANCH                   cu117
--     PYTHON_VERSION           3.10.9
+-     SDDEPOT                  https://github.com/AUTOMATIC1111/stable-diffusion-webui/
+-     BRANCH                   master
+-     PYTHON_VERSION           3.10.11
 -     GIT_VERSION              2.41.0
 -     GITLFS_VERSION           3.2.0
--     TORCH_VERSION            2.0.0
--     XFROMERS_VERSION         0.0.16rc425
+-     TORCH_VERSION            2.0.0+cu118
+-     XFROMERS_VERSION         0.0.17
 
-- 升级Torch为`2.0.0`版本，现在可以使用`CUDA 11.8`
-- 修改xformer为`0.0.16rc425`版本，以获得更好的兼容性
-- 对应的Python推荐使用`3.10.9`版本
+- 升级Torch为`2.0.0+cu118`版本，现在可以使用`CUDA 11.8`
+- 修改xformer为`0.0.17`版本，以获得更好的兼容性
+- 对应的Python推荐使用`3.10.11`版本
 - 可自定修改插件版本和仓库位置变量
 - 添加了基础模型自动下载，在`install.bat`中Clone模块可自行添加下载内容
 - 对应的WebUI中`Launch.py`文件中需修改对应的仓库依赖
