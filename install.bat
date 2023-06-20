@@ -10,8 +10,9 @@
 @CALL set PYTHON_VERSION=3.10.11
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
-@CALL set TORCH_VERSION=1.13.1
-@CALL set XFROMERS_VERSION=0.0.16
+@CALL set TORCH_VERSION=1.13.1+cu117
+@CALL set TORCHVISION_VERSION=0.14.1+cu117
+@CALL set XFROMERS_VERSION=0.0.16rc425
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
 @CALL set VENV_DIR=%ROOT%envs/%VENV_NAME%
@@ -24,9 +25,9 @@
 @CALL "%~dp0micromamba.exe" create -n %VENV_NAME% python=%PYTHON_VERSION% git=%GIT_VERSION% git-lfs=%GITLFS_VERSION% -c conda-forge -r "%~dp0\" -y
 @CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
 @CALL condabin\micromamba.bat activate %VENV_NAME%
-@CALL python -m pip install --upgrade pip
 @CALL pip install xformers==%XFROMERS_VERSION%
-@CALL pips install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+@CALL pip install torch==%TORCH_VERSION% torchvision==%TORCHVISION_VERSION% --extra-index-url https://download.pytorch.org/whl/cu117
+
 @REM CLONE STABLE-DIFFUSION-WEBUI...
 @CALL git clone -b %BRANCH% %SDDEPOT% %WEBUI_LOACTION%
 
