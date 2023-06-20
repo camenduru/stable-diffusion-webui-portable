@@ -31,11 +31,11 @@
 @CALL git clone -b %BRANCH% %SDDEPOT% %WEBUI_LOACTION%
 
 @REM CLONE REPOSITORIES...
-@CALL git clone https://github.com/CompVis/stable-diffusion.git %WEBUI_LOACTION%\respositories\stable-diffusion
-@CALL git clone https://github.com/CompVis/taming-transformers.git %WEBUI_LOACTION%\respositories\taming-transformers
-@CALL git clone https://github.com/crowsonkd/k-diffusion.git %WEBUI_LOACTION%\respositories\k-diffusion
-@CALL git clone https://github.com/sczhou/CodeFormer.git %WEBUI_LOACTION%\respositories\CodeFormer
-@CALL git clone https://github.com/saleforce/BLIP.git %WEBUI_LOACTION%\respositories\BLIP
+@CALL git clone https://github.com/CompVis/stable-diffusion.git %WEBUI_LOACTION%\repositories\stable-diffusion
+@CALL git clone https://github.com/CompVis/taming-transformers.git %WEBUI_LOACTION%\repositories\taming-transformers
+@CALL git clone https://github.com/crowsonkd/k-diffusion.git %WEBUI_LOACTION%\repositories\k-diffusion
+@CALL git clone https://github.com/sczhou/CodeFormer.git %WEBUI_LOACTION%\repositories\CodeFormer
+@CALL git clone https://github.com/saleforce/BLIP.git %WEBUI_LOACTION%\repositories\BLIP
 
 @REM CLONE BASE PLUGINS...
 @CALL git clone -b main https://github.com/Jeffreytsai1004/a1111-sd-webui-tagcomplete %WEBUI_LOACTION%\extensions\a1111-sd-webui-tagcomplete
