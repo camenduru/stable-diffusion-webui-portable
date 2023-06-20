@@ -26,6 +26,8 @@
 @CALL "%~dp0micromamba.exe" create -n %VENV_NAME% python=%PYTHON_VERSION% git=%GIT_VERSION% git-lfs=%GITLFS_VERSION% -c conda-forge -r "%~dp0\" -y
 @CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
 @CALL condabin\micromamba.bat activate %VENV_NAME%
+
+@REM PIP INSTALLING DEPENDENCIES...
 @CALL pip install xformers==%XFROMERS_VERSION%
 @CALL pip install torch==%TORCH_VERSION% torchvision==%TORCHVISION_VERSION% --extra-index-url https://download.pytorch.org/whl/cu117
 
