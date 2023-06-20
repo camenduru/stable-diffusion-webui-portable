@@ -5,8 +5,8 @@
 @CALL set ROOT=%~dp0
 @CALL set WEBUI_LOACTION=%ROOT%stable-diffusion-webui
 @REM DEPOT SETTING ...
-@CALL set SDDEPOT=https://github.com/Jeffreytsai1004/stable-diffusion-webui/
-@CALL set BRANCH=cu118
+@CALL set SDDEPOT=https://github.com/AUTOMATIC1111/stable-diffusion-webui/
+@CALL set BRANCH=master
 @REM PYTHON & GIT VERSIONS:
 @CALL set PYTHON_VERSION=3.10.11
 @CALL set GIT_VERSION=2.41.0
@@ -14,7 +14,7 @@
 @CALL set TORCH_VERSION=2.0.0
 @CALL set TORCHVISION_VERSION=0.15.0
 @CALL set TORCHAUDIO_VERSION=2.0.0
-@CALL set XFROMERS_VERSION=0.0.16rc425
+@CALL set XFROMERS_VERSION=0.0.17
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
 @CALL set VENV_DIR=%ROOT%envs/%VENV_NAME%
