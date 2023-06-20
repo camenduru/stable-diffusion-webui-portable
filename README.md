@@ -17,11 +17,10 @@ https://github.com/Jeffreytsai1004/stable-diffusion-webui/tree/portable
 -     PYTHON_VERSION           3.10.9
 -     GIT_VERSION              2.41.0
 -     GITLFS_VERSION           3.2.0
--     TORCH_VERSION            2.0.1+cu118
--     TORCHVISION_VERSION      0.15.2+cu118
+-     TORCH_VERSION            2.0.0
 -     XFROMERS_VERSION         0.0.16rc425
 
-- 升级Torch为`2.0.1+cu118`版本，现在可以使用`CUDA 11.8`
+- 升级Torch为`2.0.0`版本，现在可以使用`CUDA 11.8`
 - 修改xformer为`0.0.16rc425`版本，以获得更好的兼容性
 - 对应的Python推荐使用`3.10.9`版本
 - 可自定修改插件版本和仓库位置变量

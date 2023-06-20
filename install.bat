@@ -10,8 +10,9 @@
 @CALL set PYTHON_VERSION=3.10.11
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
-@CALL set TORCH_VERSION=2.0.1
-@CALL set TORCHVISION_VERSION=0.15.2+cu118
+@CALL set TORCH_VERSION=2.0.0
+@CALL set TORCHVISION_VERSION=0.15.0
+@CALL set TORCHAUDIO_VERSION=2.0.0
 @CALL set XFROMERS_VERSION=0.0.16rc425
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
@@ -29,8 +30,7 @@
 
 @REM PIP INSTALLING DEPENDENCIES...
 @CALL pip install xformers==%XFROMERS_VERSION%
-@CALL pip install torch==%TORCH_VERSION% torchvision==%TORCHVISION_VERSION% --extra-index-url https://download.pytorch.org/whl/cu117
-
+@CALL pip install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 @REM CLONE STABLE-DIFFUSION-WEBUI...
 @CALL git clone -b %BRANCH% %SDDEPOT% %WEBUI_LOACTION%
 
@@ -74,7 +74,6 @@
 @CALL echo         GIT-LFS VERSION:         %GITLFS_VERSION%
 @CALL echo         XFROMERS_VERSION:        %XFROMERS_VERSION%
 @CALL echo         TORCH_VERSION:           %TORCH_VERSION%
-@CALL echo         TORCHVISION_VERSION:     %TORCHVISION_VERSION%
 @CALL echo         ---------------------------------------------------
 @CALL echo         LAUNCH VARIABLES:
 @CALL echo         VENV_NAME:               %VENV_NAME%
