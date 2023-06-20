@@ -25,12 +25,11 @@
 @REM SETTING UP ENVIRONMENT...
 @CALL "%~dp0micromamba.exe" create -n %VENV_NAME% python=%PYTHON_VERSION% git=%GIT_VERSION% git-lfs=%GITLFS_VERSION% -c conda-forge -r "%~dp0\" -y
 @CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
-
-@REM PIP INSTALL DEPENDENCIES...
 @CALL condabin\micromamba.bat activate %VENV_NAME%
-@CALL python -m pip install --upgrade pip
+
+@REM PIP INSTALLING DEPENDENCIES...
 @CALL pip install xformers==%XFROMERS_VERSION%
-@CALL pip install torch==%TORCH_VERSION% torchvision==%TORCHVISION_VERSION% --index-url https://download.pytorch.org/whl/cu118
+@CALL pip install torch==%TORCH_VERSION% torchvision==%TORCHVISION_VERSION% --extra-index-url https://download.pytorch.org/whl/cu117
 
 @REM CLONE STABLE-DIFFUSION-WEBUI...
 @CALL git clone -b %BRANCH% %SDDEPOT% %WEBUI_LOACTION%
