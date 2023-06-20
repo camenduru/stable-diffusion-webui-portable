@@ -25,6 +25,7 @@
 @REM SETTING UP ENVIRONMENT...
 @CALL "%~dp0micromamba.exe" create -n %VENV_NAME% python=%PYTHON_VERSION% git=%GIT_VERSION% git-lfs=%GITLFS_VERSION% -c conda-forge -r "%~dp0\" -y
 @CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
+
 @REM PIP INSTALL DEPENDENCIES...
 @CALL condabin\micromamba.bat activate %VENV_NAME%
 @CALL python -m pip install --upgrade pip
