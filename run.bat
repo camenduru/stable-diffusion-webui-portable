@@ -1,7 +1,7 @@
 @CALL echo off
 @REM ROOT LOCATIONS: 
 @CALL set ROOT=%~dp0
-@CALL set WEBUI_LOACTION=%ROOT%stable-diffusion-webui
+@CALL set WEBUI_LOACTION=%~dp0stable-diffusion-webui
 @REM DEPOT SETTING ...
 @CALL set SDDEPOT=https://github.com/AUTOMATIC1111/stable-diffusion-webui/
 @CALL set BRANCH=master
@@ -13,7 +13,7 @@
 @CALL set XFORMERS_VERSION=0.0.17
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
-@CALL set VENV_DIR=%ROOT%envs\%VENV_NAME%
+@CALL set VENV_DIR=%~dp0envs\%VENV_NAME%
 @CALL set PYTHON=%VENV_DIR%\python.exe
 @CALL set GIT=%VENV_DIR%\Library\cmd\git.exe
 @CALL set GDOWN_CACHE=cache\gdown
