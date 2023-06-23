@@ -1,6 +1,7 @@
 ## 原始版本
 https://github.com/camenduru/stable-diffusion-webui-portable
-
+## 拉取版本
+`git clone -b AUTOMATIC1111 https://github.com/Jeffreytsai1004/stable-diffusion-webui-portable .\`
 🐣 请关注我以获取最新消息 https://twitter.com/camenduru <br />
 🔥 请加入我们的 Discord 服务器 https://discord.gg/k5BwmmvJJU
 
