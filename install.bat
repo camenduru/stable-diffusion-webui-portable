@@ -27,9 +27,6 @@
 @CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
 @CALL condabin\micromamba.bat activate %VENV_NAME%
 
-@REM CHECKING NVIDIA DRIVER VERSION...
-@CALL nvidia-smi
-
 @REM PIP INSTALLING DEPENDENCIES...
 @CALL pip install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://mirror.sjtu.edu.cn/pytorch-wheels/cu118/
 @CALL pip install -U xformers==%XFORMERS_VERSION%
