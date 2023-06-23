@@ -9,8 +9,8 @@
 @CALL set PYTHON_VERSION=3.10.11
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
-@CALL set TORCH_VERSION=2.0.0+cu118
-@CALL set XFORMERS_VERSION=0.0.17
+@CALL set TORCH_VERSION=2.0.1+cu118
+@CALL set XFORMERS_VERSION=0.0.19
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
 @CALL set VENV_DIR=%~dp0envs\%VENV_NAME%
@@ -31,7 +31,7 @@
 @CALL nvidia-smi
 
 @REM PIP INSTALLING DEPENDENCIES...
-@CALL pip install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+@CALL pip install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://mirror.sjtu.edu.cn/pytorch-wheels/cu118/
 @CALL pip install -U xformers==%XFORMERS_VERSION%
 
 @REM CLONE STABLE-DIFFUSION-WEBUI...
