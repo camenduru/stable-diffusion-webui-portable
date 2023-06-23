@@ -17,11 +17,11 @@ https://github.com/AUTOMATIC1111/stable-diffusion-webui/
 -     PYTHON_VERSION           3.10.11
 -     GIT_VERSION              2.41.0
 -     GITLFS_VERSION           3.2.0
--     TORCH_VERSION            2.0.0+cu118
--     XFROMERS_VERSION         0.0.17
+-     TORCH_VERSION            2.0.1+cu118
+-     XFROMERS_VERSION         0.0.19
 
-- 升级Torch为`2.0.0+cu118`版本，现在可以使用`CUDA 11.8`
-- 修改xformer为`0.0.17`版本，以获得更好的兼容性
+- 升级Torch为`2.0.1+cu118`版本，现在可以使用`CUDA 11.8`
+- 修改xformer为`0.0.19`版本，以获得更好的兼容性
 - 对应的Python推荐使用`3.10.11`版本
 - 可自定修改插件版本和仓库位置变量
 - 添加了基础模型自动下载，在`install.bat`中Clone模块可自行添加下载内容
