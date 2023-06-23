@@ -28,7 +28,7 @@
 @CALL condabin\micromamba.bat activate %VENV_NAME%
 
 @REM PIP INSTALLING DEPENDENCIES...
-@CALL pip install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://mirror.sjtu.edu.cn/pytorch-wheels/cu118/
+@CALL pip install torch==%TORCH_VERSION% torchvision torchaudio xformers --index-url https://mirror.sjtu.edu.cn/pytorch-wheels/cu118/
 @CALL pip install -U xformers==%XFORMERS_VERSION%
 
 @REM CLONE STABLE-DIFFUSION-WEBUI...
