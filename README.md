@@ -11,6 +11,7 @@ https://github.com/camenduru/stable-diffusion-webui-portable
 
 ## 版本
 - VERSION SETTING:
+
 -SDDEPOT                  `https://github.com/AUTOMATIC1111/stable-diffusion-webui/`
 -BRANCH                   `master`
 -PYTHON_VERSION           `3.10.11`
