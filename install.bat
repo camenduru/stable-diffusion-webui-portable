@@ -31,8 +31,7 @@
 @CALL nvidia-smi
 
 @REM PIP INSTALLING DEPENDENCIES...
-@CALL pip install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-@CALL pip install -U xformers==%XFORMERS_VERSION%
+@CALL pip install torch==%TORCH_VERSION% torchvision torchaudio xformers --index-url https://download.pytorch.org/whl/cu118
 
 @REM CLONE STABLE-DIFFUSION-WEBUI...
 @CALL git clone -b %BRANCH% %SDDEPOT% %WEBUI_LOACTION%
