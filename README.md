@@ -11,15 +11,15 @@ https://github.com/camenduru/stable-diffusion-webui-portable
 
 ## 版本
 - VERSION SETTING:
--     SDDEPOT                  `https://github.com/AUTOMATIC1111/stable-diffusion-webui/`
--     BRANCH                   `master`
--     PYTHON_VERSION           `3.10.11`
--     GIT_VERSION              `2.41.0`
--     GITLFS_VERSION           `3.2.0`
--     TORCH_VERSION            `2.0.1+cu118`
--     TORCH_VERSION            `2.0.2+cu118`
--     TORCH_VERSION            `0.15.2+cu118`
--     XFROMERS_VERSION         `0.0.20`
+-SDDEPOT                  `https://github.com/AUTOMATIC1111/stable-diffusion-webui/`
+-BRANCH                   `master`
+-PYTHON_VERSION           `3.10.11`
+-GIT_VERSION              `2.41.0`
+-GITLFS_VERSION           `3.2.0`
+-TORCH_VERSION            `2.0.1+cu118`
+-TORCH_VERSION            `2.0.2+cu118`
+-TORCH_VERSION            `0.15.2+cu118`
+-XFROMERS_VERSION         `0.0.20`
 
 ## 更新内容
 - 使用`micromamba`代替`conda`，大幅度减少依赖包的体积
