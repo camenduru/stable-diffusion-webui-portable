@@ -1,4 +1,10 @@
 @CALL echo off
+@REM Base VARIABLES:
+@CALL set VENV_NAME=sd-vnev
+
+@REM SETTING UP ENVIRONMENT...
+@CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
+@CALL condabin\micromamba.bat activate %VENV_NAME%
 @REM ROOT LOCATIONS: 
 @CALL set ROOT=%~dp0
 @CALL set WEBUI_LOACTION=%~dp0stable-diffusion-webui
@@ -12,22 +18,13 @@
 @CALL set TORCH_VERSION=2.0.1
 @CALL set TORCHVISION_VERSION=2.0.2
 @CALL set TORCHAUDIO_VERSION=0.15.2
-@CALL set XFORMERS_VERSION=0.0.20
 @REM LAUNCH VARIABLES:
-@CALL set VENV_NAME=sd-vnev
-@CALL set VENV_DIR=%~dp0envs\%VENV_NAME%
-@CALL set PYTHON=%VENV_DIR%\python.exe
-@CALL set GIT=%VENV_DIR%\Library\cmd\git.exe
 @CALL set GDOWN_CACHE=cache\gdown
 @CALL set TORCH_HOME=cache\torch
 @CALL set HF_HOME=cache\huggingface
 @CALL set PYTHONDONTWRITEBYTECODE=1
 @CALL set TORCH_COMMAND=pip install torch==%TORCH_VERSION% torchvision --index-url https://download.pytorch.org/whl/cu118
 @CALL set COMMANDLINE_ARGS=--opt-sdp-attention --autolaunch --theme dark --api --listen
-
-@REM SETTING UP ENVIRONMENT...
-@CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
-@CALL condabin\micromamba.bat activate %VENV_NAME%
 
 @REM VARIABLES ...
 @CALL echo         ---------------------------------------------------
@@ -39,9 +36,9 @@
 @CALL echo         Remote Address:          %SDDEPOT%
 @CALL echo         Current Branch:          %BRANCH%
 @CALL echo         ---------------------------------------------------
-@CALL echo         PYTHON & GIT VERSIONS:
+@CALL echo         PYTHON- & GIT- VERSIONS:
 @CALL echo         PYTHON VERSION:          %PYTHON_VERSION%
-@CALL echo         GIT VERSION:             %GIT_VERSION%
+@CALL echo         GIT-VERSION:             %GIT_VERSION%
 @CALL echo         GIT-LFS VERSION:         %GITLFS_VERSION%
 @CALL echo         TORCH_VERSION:           %TORCH_VERSION%+cu118
 @CALL echo         TORCHVISION_VERSION:     %TORCHVISION_VERSION%+cu118
@@ -50,7 +47,6 @@
 @CALL echo         ---------------------------------------------------
 @CALL echo         LAUNCH VARIABLES:
 @CALL echo         VENV_NAME:               %VENV_NAME%
-@CALL echo         VENV_DIR:                %VENV_DIR%
 @CALL echo         GDOWN_CACHE:             %GDOWN_CACHE%
 @CALL echo         TORCH_HOME:              %TORCH_HOME%
 @CALL echo         HF_HOME:                 %HF_HOME%
