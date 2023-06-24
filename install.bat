@@ -3,14 +3,16 @@
 @CALL set ROOT=%~dp0
 @CALL set WEBUI_LOACTION=%~dp0stable-diffusion-webui
 @REM DEPOT SETTING ...
-@CALL set SDDEPOT=https://github.com/Jeffreytsai1004/stable-diffusion-webui/
-@CALL set BRANCH=cu118
+@CALL set SDDEPOT=https://github.com/AUTOMATIC1111/stable-diffusion-webui/
+@CALL set BRANCH=master
 @REM PYTHON & GIT VERSIONS:
 @CALL set PYTHON_VERSION=3.10.11
 @CALL set GIT_VERSION=2.41.0
 @CALL set GITLFS_VERSION=3.2.0
-@CALL set TORCH_VERSION=2.0.0+cu118
-@CALL set XFORMERS_VERSION=0.0.17
+@CALL set TORCH_VERSION=2.0.1+cu118
+@CALL set TORCHVISION_VERSION=2.0.2+cu118
+@CALL set TORCHAUDIO_VERSION=0.15.2+cu118
+@CALL set XFORMERS_VERSION=0.0.20
 @REM LAUNCH VARIABLES:
 @CALL set VENV_NAME=sd-vnev
 @CALL set VENV_DIR=%~dp0envs\%VENV_NAME%
@@ -27,12 +29,9 @@
 @CALL "%~dp0micromamba.exe" shell init --shell=cmd.exe --prefix="%~dp0\"
 @CALL condabin\micromamba.bat activate %VENV_NAME%
 
-@REM CHECKING NVIDIA DRIVER VERSION...
-@CALL nvidia-smi
-
 @REM PIP INSTALLING DEPENDENCIES...
-@CALL pip install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-@CALL pip install xformers==%XFORMERS_VERSION%
+@CALL pip install torch==%TORCH_VERSION% torchvision==%TORCHVISION_VERSION% torchaudio==%TORCHAUDIO_VERSION% --index-url https://download.pytorch.org/whl/cu118 --no-cache-dir
+@CALL pip install xformers==%XFORMERS_VERSION% --no-cache-dir
 
 @REM CLONE STABLE-DIFFUSION-WEBUI...
 @CALL git clone -b %BRANCH% %SDDEPOT% %WEBUI_LOACTION%
@@ -90,7 +89,7 @@
 
 @REM LAUNCH WEBUI ...
 @CALL echo LAUNCH WEBUI ...
-@CALL cd stable-diffusion-webui
+@CALL cd %WEBUI_LOACTION%
 @CALL echo Launch WebUI with COMMANDLINE_ARGS: %COMMANDLINE_ARGS%
 @CALL python -B launch.py %COMMANDLINE_ARGS%
 
