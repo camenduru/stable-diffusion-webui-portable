@@ -1,6 +1,14 @@
 @CALL echo off
 @REM Base VARIABLES:
 @CALL set VENV_NAME=sd-vnev
+@REM PYTHON & GIT VERSIONS:
+@CALL set PYTHON_VERSION=3.10.11
+@CALL set GIT_VERSION=2.41.0
+@CALL set GITLFS_VERSION=3.2.0
+@CALL set TORCH_VERSION=2.0.1
+@CALL set TORCHVISION_VERSION=2.0.2
+@CALL set TORCHAUDIO_VERSION=0.15.2
+@CALL set XFORMERS_VERSION=0.0.20
 
 @REM SETTING UP ENVIRONMENT...
 @CALL "%~dp0micromamba.exe" create -n %VENV_NAME% python=%PYTHON_VERSION% git=%GIT_VERSION% git-lfs=%GITLFS_VERSION% -c conda-forge -r "%~dp0\" -y
@@ -12,42 +20,27 @@
 @REM DEPOT SETTING ...
 @CALL set SDDEPOT=https://github.com/AUTOMATIC1111/stable-diffusion-webui/
 @CALL set BRANCH=master
-@REM PYTHON & GIT VERSIONS:
-@CALL set PYTHON_VERSION=3.10.11
-@CALL set GIT_VERSION=2.41.0
-@CALL set GITLFS_VERSION=3.2.0
-@CALL set TORCH_VERSION=2.0.1
-@CALL set TORCHVISION_VERSION=2.0.2
-@CALL set TORCHAUDIO_VERSION=0.15.2
 @REM LAUNCH VARIABLES:
 @CALL set GDOWN_CACHE=cache\gdown
 @CALL set TORCH_HOME=cache\torch
 @CALL set HF_HOME=cache\huggingface
 @CALL set PYTHONDONTWRITEBYTECODE=1
-@CALL set TORCH_COMMAND=pip install torch==%TORCH_VERSION% torchvision --index-url https://download.pytorch.org/whl/cu118
-@CALL set COMMANDLINE_ARGS=--opt-sdp-attention --autolaunch --theme dark --api --listen
+@CALL set COMMANDLINE_ARGS=--opt-sdp-attention --autolaunch --theme dark --listen
 
 @REM PIP INSTALLING DEPENDENCIES...
 @CALL pip install torch==%TORCH_VERSION% torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 --no-cache-dir
+@CALL pip install xformers
+@CALL pip install gradio==3.32.0
 
 @REM CLONE STABLE-DIFFUSION-WEBUI...
 @CALL git clone -b %BRANCH% %SDDEPOT% %WEBUI_LOACTION%
 
 @REM CLONE REPOSITORIES...
-@CALL git clone https://github.com/CompVis/stable-diffusion.git %WEBUI_LOACTION%\repositories\stable-diffusion
-@CALL git clone https://github.com/CompVis/taming-transformers.git %WEBUI_LOACTION%\repositories\taming-transformers
-@CALL git clone https://github.com/crowsonkd/k-diffusion.git %WEBUI_LOACTION%\repositories\k-diffusion
-@CALL git clone https://github.com/sczhou/CodeFormer.git %WEBUI_LOACTION%\repositories\CodeFormer
-@CALL git clone https://github.com/saleforce/BLIP.git %WEBUI_LOACTION%\repositories\BLIP
-@CALL git clone -b main https://github.com/Jeffreytsai1004/a1111-sd-webui-tagcomplete %WEBUI_LOACTION%\repositories\a1111-sd-webui-tagcomplete
-@CALL git clone -b main https://github.com/Jeffreytsai1004/multidiffusion-upscaler-for-automatic1111 %WEBUI_LOACTION%\repositories\multidiffusion-upscaler-for-automatic1111
-@CALL git clone -b main https://github.com/Jeffreytsai1004/sd-webui-additional-networks %WEBUI_LOACTION%\repositories\sd-webui-additional-networks
-@CALL git clone -b main https://github.com/Jeffreytsai1004/sd-webui-controlnet %WEBUI_LOACTION%\repositories\sd-webui-controlnet
-@CALL git clone -b main https://github.com/Jeffreytsai1004/sd-webui-infinite-image-browsing %WEBUI_LOACTION%\repositories\sd-webui-infinite-image-browsing
-@CALL git clone -b main https://github.com/Jeffreytsai1004/sd-webui-model-converter %WEBUI_LOACTION%\repositories\sd-webui-model-converter
-@CALL git clone -b main https://github.com/Jeffreytsai1004/stable-diffusion-webui-localization-zh_CN %WEBUI_LOACTION%\repositories\stable-diffusion-webui-localization-zh_CN
-@CALL git clone -b master https://github.com/Jeffreytsai1004/stable-diffusion-webui-localization-zh_Hans %WEBUI_LOACTION%\repositories\stable-diffusion-webui-localization-zh_Hans
-@CALL git clone -b master https://github.com/Jeffreytsai1004/stable-diffusion-webui-wd14-tagger %WEBUI_LOACTION%\repositories\stable-diffusion-webui-wd14-tagger
+@CALL git clone https://github.com/Jeffreytsai1004/CompVis-stable-diffusion.git %WEBUI_LOACTION%\repositories\stable-diffusion
+@CALL git clone https://github.com/Jeffreytsai1004/taming-transformers.git %WEBUI_LOACTION%\repositories\taming-transformers
+@CALL git clone https://github.com/Jeffreytsai1004/k-diffusion.git %WEBUI_LOACTION%\repositories\k-diffusion
+@CALL git clone https://github.com/Jeffreytsai1004/CodeFormer.git %WEBUI_LOACTION%\repositories\CodeFormer
+@CALL git clone https://github.com/Jeffreytsai1004/BLIP.git %WEBUI_LOACTION%\repositories\BLIP
 
 @REM DOWNLOADING BASE MODELS...
 @CALL curl -L https://cdn-lfs.huggingface.co/repos/0a/1d/0a1d9c5fc6ff78cf663d7cdf6173886450a85f32de6528b8168c9259f7336972/c74b4e810b030f6b75fde959e2db678c268d07115b85356d3c0138ba5eb42340?response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27EasyNegative.safetensors%3B+filename%3D%22EasyNegative.safetensors%22%3B&Expires=1687852965&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4tbGZzLmh1Z2dpbmdmYWNlLmNvL3JlcG9zLzBhLzFkLzBhMWQ5YzVmYzZmZjc4Y2Y2NjNkN2NkZjYxNzM4ODY0NTBhODVmMzJkZTY1MjhiODE2OGM5MjU5ZjczMzY5NzIvYzc0YjRlODEwYjAzMGY2Yjc1ZmRlOTU5ZTJkYjY3OGMyNjhkMDcxMTViODUzNTZkM2MwMTM4YmE1ZWI0MjM0MD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2ODc4NTI5NjV9fX1dfQ__&Signature=VMA4AgT3nenBruigAioY7%7E2dErOUPNCkSMTxfZ1eCHaI6rQ50hPk2H5soUolfbq4tDhW%7EobIKrWgfxLDVn8%7EB4jxJ4edExPJgsZLxV9tV8M4feDDCKhd2itNiZI-K3FufAijuaRv8UqK415enwr7lW4%7EeHLE%7E%7ExAUObtBmKqp5x8FibNvCvEci3YGNxEm2mLy3AlEiWeYzB%7EWZt6AOPwfZnbtEk%7E%7E7trrwZNw1cK1Lul1jKzOlEIzw8FSPa3nksrB0WUGx%7EUCoP39VmyOPn%7EagdWjmsIob%7EbVvtJ95SfdMJvBFMlmHOlgzF%7EwM%7EDt8w2y8zTtDPwxIl8lpp2R69ZMw__&Key-Pair-Id=KVTP0A1DKRTAX -o %WEBUI_LOACTION%\embeddings\EasyNegative.safetensors
@@ -66,13 +59,14 @@
 @CALL echo         Remote Address:          %SDDEPOT%
 @CALL echo         Current Branch:          %BRANCH%
 @CALL echo         ---------------------------------------------------
-@CALL echo         PYTHON- & GIT- VERSIONS:
+@CALL echo         TOOLS VERSIONS:
 @CALL echo         PYTHON VERSION:          %PYTHON_VERSION%
 @CALL echo         GIT-VERSION:             %GIT_VERSION%
 @CALL echo         GIT-LFS VERSION:         %GITLFS_VERSION%
 @CALL echo         TORCH_VERSION:           %TORCH_VERSION%+cu118
 @CALL echo         TORCHVISION_VERSION:     %TORCHVISION_VERSION%+cu118
 @CALL echo         TORCHAUDIO_VERSION:      %TORCHAUDIO_VERSION%+cu118
+@CALL echo         XFORMERS_VERSION:        %XFORMERS_VERSION%
 @CALL echo         ---------------------------------------------------
 @CALL echo         LAUNCH VARIABLES:
 @CALL echo         VENV_NAME:               %VENV_NAME%
