@@ -24,7 +24,7 @@
 @CALL set TORCH_HOME=cache\torch
 @CALL set HF_HOME=cache\huggingface
 @CALL set PYTHONDONTWRITEBYTECODE=1
-@CALL set COMMANDLINE_ARGS=--opt-sdp-attention --autolaunch --theme dark --listen
+@CALL set COMMANDLINE_ARGS=--opt-sdp-attention --xformers --autolaunch --theme dark --listen
 
 @REM VARIABLES ...
 @CALL echo         ---------------------------------------------------
