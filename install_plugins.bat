@@ -1,0 +1,30 @@
+@CALL echo off
+@CALL git clone https://github.com/AIrjen/OneButtonPrompt .\stable-diffusion-webui\extensions\OneButtonPrompt
+@CALL git clone https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris .\stable-diffusion-webui\extensions\a1111-sd-webui-lycoris
+@CALL git clone https://github.com/camenduru/a1111-sd-webui-tagcomplete .\stable-diffusion-webui\extensions\a1111-sd-webui-tagcomplete
+@CALL git clone https://github.com/journey-ad/sd-webui-bilingual-localization .\stable-diffusion-webui\extensions\sd-webui-bilingual-localization
+@CALL git clone https://github.com/butaixianran/Stable-Diffusion-Webui-Civitai-Helper.git .\stable-diffusion-webui\extensions\Stable-Diffusion-Webui-Civitai-Helper
+@CALL git clone https://gitcode.net/ranting8323/a1111-sd-webui-tagcomplete .\stable-diffusion-webui\extensions\a1111-sd-webui-tagcomplete
+@CALL git clone https://gitcode.net/ranting8323/sd-webui-deforum.git .\stable-diffusion-webui\extensions\sd-webui-deforum
+@CALL git clone https://github.com/Jeffreytsai1004/maple-from-fall-and-flower .\stable-diffusion-webui\extensions\maple-from-fall-and-flower
+@CALL git clone https://github.com/rifeWithKaiju/model_preset_manager.git .\stable-diffusion-webui\extensions\model_preset_manager
+@CALL git clone https://gitcode.net/ranting8323/multidiffusion-upscaler-for-automatic1111.git .\stable-diffusion-webui\extensions\multidiffusion-upscaler-for-automatic1111
+@CALL git clone https://github.com/fkunn1326/openpose-editor.git .\stable-diffusion-webui\extensions\openpose-editor
+@CALL git clone https://github.com/ParisNeo/prompt_translator.git .\stable-diffusion-webui\extensions\prompt_translator
+@CALL git clone https://github.com/mcmonkeyprojects/sd-infinity-grid-generator-script.git .\stable-diffusion-webui\extensions\sd-infinity-grid-generator-script
+@CALL git clone https://github.com/CurtisDS/sd-model-preview-xd .\stable-diffusion-webui\extensions\sd-model-preview-xd
+@CALL git clone https://gitcode.net/ranting8323/sd-webui-additional-networks .\stable-diffusion-webui\extensions\sd-webui-additional-networks
+@CALL git clone https://github.com/journey-ad/sd-webui-bilingual-localization.git .\stable-diffusion-webui\extensions\sd-webui-bilingual-localization
+@CALL git clone https://gitcode.net/ranting8323/sd-webui-controlnet .\stable-diffusion-webui\extensions\sd-webui-controlnet
+@CALL git clone https://github.com/jexom/sd-webui-depth-lib .\stable-diffusion-webui\extensions\sd-webui-depth-lib
+@CALL git clone https://gitcode.net/ranting8323/sd-webui-infinite-image-browsing .\stable-diffusion-webui\extensions\sd-webui-infinite-image-browsing
+@CALL git clone https://gitcode.net/ranting8323/sd-webui-lora-block-weight.git .\stable-diffusion-webui\extensions\sd-webui-lora-block-weight
+@CALL git clone https://gitcode.net/ranting8323/sd-webui-model-converter .\stable-diffusion-webui\extensions\sd-webui-model-converter
+@CALL git clone https://gitcode.net/ranting8323/sd-webui-segment-anything.git .\stable-diffusion-webui\extensions\sd-webui-segment-anything
+@CALL git clone https://gitcode.net/ranting8323/sd-webui-supermerger.git .\stable-diffusion-webui\extensions\sd-webui-supermerger
+@CALL git clone https://ghproxy.com/https://github.com/a2569875/stable-diffusion-webui-composable-lora.git .\stable-diffusion-webui\extensions\stable-diffusion-webui-composable-lora
+@CALL git clone https://gitcode.net/ranting8323/stable-diffusion-webui-images-browser/ .\stable-diffusion-webui\extensions\stable-diffusion-webui-images-browser
+@CALL git clone https://gitcode.net/ranting8323/stable-diffusion-webui-localization-zh_CN .\stable-diffusion-webui\extensions\stable-diffusion-webui-localization-zh_CN
+@CALL git clone https://gitcode.net/ranting8323/stable-diffusion-webui-model-toolkit.git .\stable-diffusion-webui\extensions\stable-diffusion-webui-model-toolkit
+@CALL git clone https://gitcode.net/ranting8323/stable-diffusion-webui-wd14-tagger .\stable-diffusion-webui\extensions\stable-diffusion-webui-wd14-tagger
+@pause

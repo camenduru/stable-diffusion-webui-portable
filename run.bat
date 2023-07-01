@@ -5,5 +5,5 @@
 @CALL set HF_HOME=cache\huggingface
 @CALL set PYTHONDONTWRITEBYTECODE=1
 @CALL cd stable-diffusion-webui
-@CALL python -B launch.py --opt-sdp-attention --xformers --autolaunch --theme dark --listen --enable-insecure-extension-access
+@CALL python -B webui.py --opt-sdp-attention --xformers --autolaunch --theme dark --listen --enable-insecure-extension-access
 @CALL PAUSE
