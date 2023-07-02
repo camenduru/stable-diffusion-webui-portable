@@ -1,6 +1,7 @@
 @CALL echo off
 @CALL git clone https://github.com/AIrjen/OneButtonPrompt .\stable-diffusion-webui\extensions\OneButtonPrompt
 @CALL git clone https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris .\stable-diffusion-webui\extensions\a1111-sd-webui-lycoris
+@CALL git clone https://github.com/Jeffreytsai1004/sd-webui-deforum .\stable-diffusion-webui\extensions\sd-webui-deforum
 @CALL git clone https://github.com/camenduru/a1111-sd-webui-tagcomplete .\stable-diffusion-webui\extensions\a1111-sd-webui-tagcomplete
 @CALL git clone https://github.com/journey-ad/sd-webui-bilingual-localization .\stable-diffusion-webui\extensions\sd-webui-bilingual-localization
 @CALL git clone https://github.com/butaixianran/Stable-Diffusion-Webui-Civitai-Helper.git .\stable-diffusion-webui\extensions\Stable-Diffusion-Webui-Civitai-Helper
